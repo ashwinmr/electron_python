@@ -16,7 +16,9 @@
     "keywords": [],
     "author": "",
     "license": "MIT",
-    "dependencies": {},
+    "dependencies": {
+        "zerorpc": "^0.9.8"
+    },
     "devDependencies": {
         "electron": "^6.0.10",
         "electron-builder": "^21.2.0",

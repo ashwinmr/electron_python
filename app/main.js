@@ -64,3 +64,20 @@ app.on('window-all-closed', () => {
         app.quit()
     }
 })
+
+// Create python process
+function createPyProc() {
+    let port = 4242
+    let script = path.join(__dirname, 'src', 'pypac', 'pypac.py')
+    pyProc = require('child_process').spawn('python', [script, port])
+    if (pyProc != null) {
+        console.log('child process success')
+    }
+}
+
+function exitPyProc() {
+    pyProc.kill()
+}
+
+app.on('ready', createPyProc)
+app.on('window-all-closed', exitPyProc)
